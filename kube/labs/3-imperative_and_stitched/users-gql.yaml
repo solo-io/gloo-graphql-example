@@ -4,6 +4,8 @@ metadata:
   name: remote-graphql-users
   namespace: gloo-system
 spec:
+  options:
+     logSensitiveInfo: true
   executableSchema:
     executor:
       remote:

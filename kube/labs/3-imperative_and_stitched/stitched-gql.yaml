@@ -4,6 +4,8 @@ metadata:
   name: stitched-gql
   namespace: gloo-system
 spec:
+  options:
+     logSensitiveInfo: true
   stitchedSchema:
     subschemas:
     - name: remote-graphql-users
