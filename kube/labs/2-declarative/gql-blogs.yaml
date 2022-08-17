@@ -38,7 +38,7 @@ spec:
 
       type Blog {      
         id: Int
-        username: String
+        user: User
         content: String
         title: String
         comments: [Comment] @resolve(name: "getComments")
@@ -46,8 +46,10 @@ spec:
 
       type Comment {      
         id: Int
-        username: String
+        user: User
         comment: String
       }
 
-
+      type User {      
+        username: String
+      }

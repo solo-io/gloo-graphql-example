@@ -58,8 +58,8 @@
       "Blog": {
         "type": "object",
         "properties": {
-          "username": {
-            "type": "string"
+          "user": {
+            "$ref": "#/components/schemas/User"
           },
           "title": {
             "type": "string"
@@ -76,6 +76,14 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Blog"
+        }
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          }
         }
       }
     }
