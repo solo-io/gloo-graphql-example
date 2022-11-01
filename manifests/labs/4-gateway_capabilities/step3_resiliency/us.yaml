@@ -1,0 +1,30 @@
+apiVersion: gloo.solo.io/v1
+kind: Upstream
+metadata:
+  name: default-users-80
+  namespace: gloo-system
+spec:
+  discoveryMetadata:
+    labels:
+      app: users
+  kube:
+    selector:
+      app: users
+    serviceName: users
+    serviceNamespace: default
+    servicePort: 80
+  healthChecks:
+  - timeout: 1s
+    interval: 1s
+    unhealthyThreshold: 1
+    healthyThreshold: 1
+    tcpHealthCheck: {}  
+  failover:
+    prioritizedLocalities:
+    - localityEndpoints:
+      - lbEndpoints:
+        - address: users-backup.default
+          port: 80
+        locality:
+          region: local
+          zone: local
