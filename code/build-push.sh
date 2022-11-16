@@ -32,3 +32,5 @@ cd ./comments
 docker build --platform linux/amd64 -t $REPO/comments:$VERSION --no-cache . 
 docker push $REPO/comments:$VERSION
 
+
+docker buildx rm
