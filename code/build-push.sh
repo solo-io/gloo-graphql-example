@@ -18,7 +18,7 @@ docker buildx build --platform $ARCH -t $REPO/blogs:$VERSION --no-cache  --push 
 #Users 
 cd $PARENT_PWD
 cd ./users/users-apollo 
-docker buildx build --platform $ARCH -t $REPO/users-gql:$VERSION --no-cache  --push .
+docker buildx build --platform $ARCH -t $REPO/users:$VERSION --no-cache  --push .
 
 cd $PARENT_PWD
 cd ./users/users-rest 
