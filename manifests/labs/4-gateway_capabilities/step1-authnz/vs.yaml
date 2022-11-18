@@ -23,11 +23,11 @@ spec:
       matchers:
       - prefix: /graphql
     # After attaching the authconfig, Envoy will enforce the API key.    
-    options:
-      extauth:
-        configRef:
-          name: apikey-auth
-          namespace: gloo-system      
+      options:
+        extauth:
+          configRef:
+            name: apikey-auth
+            namespace: gloo-system      
     - matchers:
       - prefix: /
       routeAction:

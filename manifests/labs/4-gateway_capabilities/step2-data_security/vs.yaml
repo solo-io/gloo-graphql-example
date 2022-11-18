@@ -22,22 +22,22 @@ spec:
         namespace: gloo-system
       matchers:
       - prefix: /graphql
-    options:
-      extauth:
-        configRef:
-          name: apikey-auth
-          namespace: gloo-system
-    # The following will mask the Id field from being returned to the client.
-      dlp:
-        actions:
-        - customAction:
-            maskChar: "*"
-            name: test   # only used for logging
-            percent:
-              value: 60
-            regexActions:
-            - regex: '"username":[^"]*"([^"]*)"'
-              subgroup: 1
+      options:
+        extauth:
+          configRef:
+            name: apikey-auth
+            namespace: gloo-system
+        # The following will mask the Id field from being returned to the client.
+        dlp:
+          actions:
+          - customAction:
+              maskChar: "*"
+              name: test   # only used for logging
+              percent:
+                value: 60
+              regexActions:
+              - regex: '"username":[^"]*"([^"]*)"'
+                subgroup: 1
     - matchers:
       - prefix: /
       routeAction:
