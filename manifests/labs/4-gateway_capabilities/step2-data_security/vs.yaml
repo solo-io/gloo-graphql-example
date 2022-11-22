@@ -17,6 +17,7 @@ spec:
         allowOriginRegex:
         - '/*'
     routes:
+    # ----------- Route to the Stitched GraphQL API -----------
     - graphqlApiRef:
         name: stitched-gql
         namespace: gloo-system
@@ -38,6 +39,7 @@ spec:
               regexActions:
               - regex: '"username":[^"]*"([^"]*)"'
                 subgroup: 1
+    # ----------- Route to the Gloo Edge Console -----------
     - matchers:
       - prefix: /
       routeAction:

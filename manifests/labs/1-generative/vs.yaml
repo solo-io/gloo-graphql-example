@@ -17,11 +17,21 @@ spec:
         allowOriginRegex:
         - '/*'
     routes:
+    # ----------- Route to the Base Blogs REST Service -----------
+    - matchers:
+      - prefix: /blogs
+      routeAction:
+        single:
+          upstream:
+            name: default-blogs-80
+            namespace: gloo-system
+    # ----------- Route to the Discovered GraphQL API -----------
     - graphqlApiRef:
         name: default-blogs-80
         namespace: gloo-system
       matchers:
       - prefix: /graphql
+    # ----------- Route to the Gloo Edge Console -----------
     - matchers:
       - prefix: /
       routeAction:
