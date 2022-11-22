@@ -17,17 +17,11 @@ spec:
         allowOriginRegex:
         - '/*'
     routes:
-    # ----------- Route to the Stitched GraphQL API -----------
-    - graphqlApiRef:
-        name: stitched-gql
-        namespace: gloo-system
-      matchers:
-      - prefix: /graphql
-    # ----------- Route to the Gloo Edge Console -----------
+    # ----------- Route to the Base Blogs REST Service -----------
     - matchers:
-      - prefix: /
+      - prefix: /blogs
       routeAction:
         single:
           upstream:
-            name: gloo-system-gloo-fed-console-8090
-            namespace: gloo-system      
+            name: default-blogs-80
+            namespace: gloo-system

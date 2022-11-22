@@ -17,6 +17,7 @@ spec:
         allowOriginRegex:
         - '/*'
     routes:
+    # ----------- Route to the Stitched GraphQL API -----------
     - graphqlApiRef:
         name: stitched-gql
         namespace: gloo-system
@@ -27,7 +28,8 @@ spec:
         extauth:
           configRef:
             name: apikey-auth
-            namespace: gloo-system      
+            namespace: gloo-system
+    # ----------- Route to the Gloo Edge Console -----------
     - matchers:
       - prefix: /
       routeAction:
