@@ -25,12 +25,6 @@ spec:
           upstream:
             name: default-blogs-80
             namespace: gloo-system
-    # ----------- Route to the Discovered GraphQL API -----------
-    - graphqlApiRef:
-        name: default-blogs-80
-        namespace: gloo-system
-      matchers:
-      - prefix: /graphql
     # ----------- Route to the Gloo Edge Console -----------
     - matchers:
       - prefix: /

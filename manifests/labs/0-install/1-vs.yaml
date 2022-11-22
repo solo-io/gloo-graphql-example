@@ -7,15 +7,6 @@ spec:
   virtualHost:
     domains:
     - '*'
-    options:
-      cors:
-        allowCredentials: true
-        allowHeaders:
-        - content-type
-        allowMethods:
-        - POST
-        allowOriginRegex:
-        - '/*'
     routes:
     # ----------- Route to the Base Blogs REST Service -----------
     - matchers:
