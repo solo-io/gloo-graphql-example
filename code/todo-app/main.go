@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 
 	todo "github.com/solo-io/gloo-graphql-example/code/todo-app/server"
 )
@@ -12,6 +13,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	fmt.Println("Todo app running on localhost:8080")
 	err = <-errs
 	panic(err)
 }

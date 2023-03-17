@@ -4,4 +4,6 @@ ADD . /project
 
 WORKDIR /project
 
+RUN go mod download
+
 ENTRYPOINT ["go", "run", "./code/todo-app/..."]
