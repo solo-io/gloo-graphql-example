@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # build-todo-app.sh ${VERSION}
 
 VERSION=$1
